@@ -7,11 +7,9 @@ const { MongoClient } = require('mongodb');
 MONGO_URI='mongodb+srv://jesujimenezochoa:8fZgYpiFRu1N9OZW@cluster0.tymqd.mongodb.net/urls?retryWrites=true&w=majority&appName=Cluster0'
 console.log('Mongo URI archivo:', MONGO_URI)
 
-DBURI = process.env.MONGO_URI;
-console.log('mongo uri:', DBURI);
 
 const client = new MongoClient(MONGO_URI);
-const database = client.database('urlshortener');
+const database = client.db('urlshortener');
 const urls = database.collection('urls');
 
 // Basic Configuration
