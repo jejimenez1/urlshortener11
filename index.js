@@ -3,6 +3,9 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 
+MONGO_URI:'mongodb+srv://jesujimenezochoa:8fZgYpiFRu1N9OZW@cluster0.tymqd.mongodb.net/urls?retryWrites=true&w=majority&appName=Cluster0'
+console.log('Mongo URI archivo:', MONGO_URI)
+
 // Basic Configuration
 const port = process.env.PORT || 3000;
 
