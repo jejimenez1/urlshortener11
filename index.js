@@ -23,7 +23,7 @@ app.get('/api/hallo', function(req, res) {
   res.json({ greeting: 'hallo API' });
 });
 
-console.log(process.env.MONGO_URI);
+console.log('mongo uri:', process.env.MONGO_URI);
 
 app.listen(port, function() {
   console.log(`Listening on port ${port}`);
