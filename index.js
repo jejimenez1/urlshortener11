@@ -101,6 +101,24 @@ app.post('/api/shorturl', async function(req, res) {
   }
 });
 
+app.get('/api/shorturl/:shortUrl', function(req, res) {
+  try {
+    const shortUrl = parseInt(req.params.shortUrl, 10);
+    const formula = async () => {
+      const doc = await urls.findOne({short_url: shortUrl});
+      if (!doc) {
+        return res.json({error: 'No short url found'});
+      }
+
+      return res.redirect(doc.fullurl);
+    }
+
+    formula();
+  } catch (err) {
+    return res.json({error: 'Error fetching fullurl'})
+  }
+})
+
 app.listen(port, function() {
   console.log(`Listening on port ${port}`);
 });
